@@ -7,6 +7,12 @@ variable "region" {
   default     = "us-east-1"
 }
 
+variable "ecs_cluster_name" {
+  description = "Name of the ECS cluster"
+  type        = string
+  default     = "nginx-demo-ecs-cluster"
+}
+
 variable "ecs_cpu" {
   description = "CPU units for ECS task"
   type        = string

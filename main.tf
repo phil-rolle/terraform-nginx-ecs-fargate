@@ -3,7 +3,7 @@
 # leveraging separate reusable modules for IAM, VPC, Security Groups, ALB, and ECS.
 
 terraform {
-  required_version = ">= 1.12.0" # Ensure Terraform version is compatible
+  required_version = ">= 1.12.1" # Ensure Terraform version is compatible
 }
 
 # IAM module to create roles and policies needed for ECS tasks
@@ -38,7 +38,7 @@ module "alb" {
 module "ecs" {
     source = "./modules/ecs"
 
-  cluster_name       = "nginx-demo-ecs-cluster" # Name for the ECS cluster
+  cluster_name       = var.ecs_cluster_name # Name for the ECS cluster
   cpu                = var.ecs_cpu # CPU units for the ECS task
   memory             = var.ecs_memory # Memory in MiB for the ECS task
   image_name         = var.ecs_image_name # Docker image for the ECS task
