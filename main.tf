@@ -2,6 +2,10 @@
 # This root module orchestrates the core infrastructure components by
 # leveraging separate reusable modules for IAM, VPC, Security Groups, ALB, and ECS.
 
+terraform {
+  required_version = ">= 1.12.0" # Ensure Terraform version is compatible
+}
+
 # IAM module to create roles and policies needed for ECS tasks
 module "iam" {
   source = "./modules/iam"
