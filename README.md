@@ -2,7 +2,9 @@
 
 ## Overview
 
-This project uses **[Terraform](https://www.terraform.io/downloads)** to deploy a highly available **[NGINX](https://nginx.org/)** service on AWS using [AWS ECS Fargate](https://aws.amazon.com/fargate/) to host a containerized NGINX application. The application sits behind an **Application Load Balancer (ALB)**. Additional features include:
+This project uses **[Terraform](https://www.terraform.io/downloads)** to deploy a highly available **[NGINX](https://nginx.org/)** service on AWS using **[AWS ECS Fargate](https://aws.amazon.com/fargate/)** to host a containerized NGINX application. 
+The application sits behind an **Application Load Balancer (ALB)**. 
+Additional features include:
 
 - Basic IAM roles and policies for ECS task execution
 - CloudWatch logging (for troubleshooting, etc.)
