@@ -133,7 +133,7 @@ In conclusion, Fargate is an ideal solution for this deployment, which has:
 - Add SSL/HTTPS support via ACM or storing secret(s) in Vault
 - Experiment with WAF (Web Application Firewall) on ALB.
 - Add auto-scaling features depending on load/request count
-- Improve security standpoint (e.g. lock down HTTP)
+- Improve security standpoint (e.g. lock down HTTP if only required by a subset of consumers, fully private subnets + NAT for secure services)
 
 ---
 
