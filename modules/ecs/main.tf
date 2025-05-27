@@ -1,10 +1,16 @@
 # This module deploys an Nginx service on AWS ECS using Fargate.
+
+resource "aws_cloudwatch_log_group" "ecs_log_group" {
+  name              = var.log_group_name
+  retention_in_days = 7
+}
+
 resource "aws_ecs_cluster" "main" {
   name = var.cluster_name
 }
 # This module deploys an Nginx service on AWS ECS using Fargate.
 resource "aws_ecs_service" "nginx_service" {
-  name            = "${var.cluster_name}-nginx-service"
+  name            = "nginx-service"
   cluster         = aws_ecs_cluster.main.id
   task_definition = aws_ecs_task_definition.nginx_task.arn
   desired_count   = var.desired_count
@@ -18,7 +24,7 @@ resource "aws_ecs_service" "nginx_service" {
 
   load_balancer {
     target_group_arn = var.target_group_arn
-    container_name   = "${var.cluster_name}-nginx"
+    container_name   = "nginx"
     container_port   = 80
   }
 
@@ -28,7 +34,7 @@ resource "aws_ecs_service" "nginx_service" {
 }
 
 resource "aws_ecs_task_definition" "nginx_task" {
-  family                   = "${var.cluster_name}-nginx-task"
+  family                   = "nginx-task"
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
   cpu                      = var.cpu
@@ -38,7 +44,7 @@ resource "aws_ecs_task_definition" "nginx_task" {
 
   container_definitions = jsonencode([
     {
-      name      = "${var.cluster_name}-nginx"
+      name      = "nginx"
       image     = var.image_name  
       essential = true
       portMappings = [

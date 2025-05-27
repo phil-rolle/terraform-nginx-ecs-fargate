@@ -6,7 +6,7 @@ resource "aws_lb" "main" {
   security_groups    = [var.alb_sg_id]
   subnets            = var.public_subnet_ids
 
-  enable_deletion_protection = true
+  enable_deletion_protection = false
   idle_timeout               = 60
 
   tags = {
