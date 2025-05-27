@@ -13,7 +13,8 @@ Additional features include:
 - Modular, reusable Terraform code/structure
 
 This project was designed as a proof-of-concept to demo Fargate as well as provide a robust, repeatable, and secure way to deploy this infrastructure using Terraform.
-* Note that auto-scaling is not implemented here, but can be achieved by registering the ECS service with Application Auto Scaling and defining CloudWatch-based auto-scaling policies as an example.
+
+*Note that auto-scaling is not implemented here, but can be achieved by registering the ECS service with Application Auto Scaling and defining CloudWatch-based auto-scaling policies as an example.
 
 ## How to Deploy
 
