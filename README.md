@@ -69,6 +69,8 @@ This project was designed as a proof-of-concept to demo Fargate as well as provi
    ```
    http://<alb_dns_name>
    ```
+   Note that services take time to spin up, so depending on resources, it may take a few minutes to access the endpoint.
+   
 ![Successful deployment of nginx in Fargate](images/successful_deployment.png)
    
 ---
