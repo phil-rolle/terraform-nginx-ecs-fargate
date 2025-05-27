@@ -1,4 +1,6 @@
-#modules/vpc/outputs.tf
+#modules/vpc/outputs.tf - Outputs for the VPC module
+
+# Output vpc_id and public subnet IDs from the VPC module
 output "vpc_id" {
   description = "ID of the created VPC"
   value       = aws_vpc.main.id
