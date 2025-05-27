@@ -1,9 +1,13 @@
-variable "region" {
-  description = "AWS region"
+# variables.tf - Input variables for the demo infrastructure
+# These variables control configuration for the AWS region, networking, ECS service, tagging, and logging.
+
+# AWS region for the resources
+variable "region" { 
   type        = string
   default     = "us-east-1"
 }
 
+# Networking variables for VPC, subnets, ECS cluster, and ECS task configuration
 variable "vpc_cidr_block" {
   description = "CIDR block for the VPC"
   type        = string
@@ -16,12 +20,14 @@ variable "public_subnet_cidrs" {
   default     = ["10.0.1.0/24", "10.0.2.0/24"]
 }
 
+# Availability zones for the VPC and ECS tasks
 variable "availability_zones" {
   description = "List of availability zones"
   type        = list(string)
   default     = ["us-east-1a", "us-east-1b"]
 }
 
+# ECS configuration variables for cluster, task definition, and service
 variable "ecs_cluster_name" {
   description = "Name of the ECS cluster"
   type        = string
@@ -52,6 +58,7 @@ variable "ecs_image_name" {
   default     = "nginx:stable-alpine"
 }
 
+# Tags to apply to resources for organization and management
 variable "tags" {
   description = "Tags to apply to all resources"
   type        = map(string)
@@ -62,6 +69,7 @@ variable "tags" {
   }
 }
 
+# CloudWatch Logs group name for ECS task logging
 variable "log_group_name" {
   description = "CloudWatch Logs group name"
   type        = string
