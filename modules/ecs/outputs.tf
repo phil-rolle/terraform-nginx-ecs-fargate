@@ -1,4 +1,7 @@
-# This module deploys an Nginx service on AWS ECS using Fargate.
+# modules/ecs/outputs.tf
+# This module outputs key information about the ECS Nginx service on Fargate.
+
+# Output the ID and name of the ECS cluster, the service name, and the task definition ARN.
 output "cluster_id" {
   value = aws_ecs_cluster.main.id
   description = "ID of the ECS cluster"
