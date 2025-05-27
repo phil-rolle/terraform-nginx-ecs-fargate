@@ -1,9 +1,8 @@
 
 # outputs.tf - Outputs from root module for demo infrastructure
-# These outputs expose key resource identifiers and ARNs
-# that can be used by other Terraform configurations or automation scripts.
+# This module outputs key identifiers and information about the created AWS resources,
 
-# Output the VPC ID, public subnet IDs, ALB DNS name, ECS cluster name, and other key identifiers
+# Output the VPC ID
 output "vpc_id" {
   description = "ID of the created VPC"
   value       = module.vpc.vpc_id
