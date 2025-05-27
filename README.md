@@ -64,6 +64,8 @@ This project uses Terraform to deploy a highly available NGINX service on AWS us
 - Parameterize image repository and support blue/green or canary deployments.
 - Store Terraform state remotely (e.g., S3 + DynamoDB) for team collaboration.
 - Add SSL/HTTPS support via ACM or storing secrets in Vault
+- Add auto-scaling features depending on load/request count
+- Improve security standpoint (e.g. lock down HTTP)
 
 ---
 
