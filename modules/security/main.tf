@@ -1,4 +1,7 @@
 # modules/security/main.tf
+# This module sets up security groups for the ALB and ECS tasks in the specified VPC.
+
+# Security Group for the Application Load Balancer (ALB) and ECS tasks
 resource "aws_security_group" "alb_sg" {
   name        = "nginx-demo-alb-sg"
   description = "Security group for the ALB"
@@ -25,7 +28,7 @@ resource "aws_security_group" "alb_sg" {
         Name = "nginx-demo-alb-sg"
     }
 }
-
+# Security Group for ECS tasks
 resource "aws_security_group" "ecs_task_sg" {
   name        = "nginx-demo-ecs-task-sg"
   description = "Security group for ECS tasks"

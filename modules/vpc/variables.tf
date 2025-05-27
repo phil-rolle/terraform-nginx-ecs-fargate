@@ -1,4 +1,5 @@
-# modules/vpc/variables.tf - Input variables for the VPC module
+# modules/vpc/variables.tf 
+# Input variables for the VPC module
 
 # The ID of the VPC
 variable "vpc_id" {

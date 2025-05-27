@@ -1,4 +1,5 @@
-#modules/vpc/outputs.tf - Outputs for the VPC module
+#modules/vpc/outputs.tf 
+# Outputs for the VPC module
 
 # Output vpc_id and public subnet IDs from the VPC module
 output "vpc_id" {
