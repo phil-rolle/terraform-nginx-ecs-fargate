@@ -12,6 +12,7 @@ module "iam" {
 # VPC module to create networking resources (VPC, subnets, routing)
 module "vpc" { 
   source = "./modules/vpc"
+  vpc_id = module.vpc.vpc_id
 }
 
 # Security module to create Security Groups linked to the VPC
