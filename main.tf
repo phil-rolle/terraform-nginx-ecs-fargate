@@ -4,6 +4,13 @@
 
 terraform {
   required_version = ">= 1.12.1" # Ensure Terraform version is compatible
+  
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws" # AWS provider for managing AWS resources
+      version = "~> 5.0" # Use version 5.x of the AWS provider
+    }
+  }
 }
 
 # IAM module to create roles and policies needed for ECS tasks
